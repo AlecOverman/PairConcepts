@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Pair-Concepts/static/css/main.f855e6bc.css",
-    "main.js": "/Pair-Concepts/static/js/main.f31ceacb.js",
-    "static/js/453.ca7019b4.chunk.js": "/Pair-Concepts/static/js/453.ca7019b4.chunk.js",
-    "static/media/logo.svg": "/Pair-Concepts/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Pair-Concepts/index.html",
-    "main.f855e6bc.css.map": "/Pair-Concepts/static/css/main.f855e6bc.css.map",
-    "main.f31ceacb.js.map": "/Pair-Concepts/static/js/main.f31ceacb.js.map",
-    "453.ca7019b4.chunk.js.map": "/Pair-Concepts/static/js/453.ca7019b4.chunk.js.map"
+    "main.css": "/PairConcepts/static/css/main.f855e6bc.css",
+    "main.js": "/PairConcepts/static/js/main.36360bd2.js",
+    "static/js/453.ca7019b4.chunk.js": "/PairConcepts/static/js/453.ca7019b4.chunk.js",
+    "static/media/logo.svg": "/PairConcepts/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/PairConcepts/index.html",
+    "main.f855e6bc.css.map": "/PairConcepts/static/css/main.f855e6bc.css.map",
+    "main.36360bd2.js.map": "/PairConcepts/static/js/main.36360bd2.js.map",
+    "453.ca7019b4.chunk.js.map": "/PairConcepts/static/js/453.ca7019b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.f31ceacb.js"
+    "static/js/main.36360bd2.js"
   ]
 }
