@@ -1,0 +1,15 @@
+.app {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .left {
+    flex: 3;
+    padding: 20px;
+  }
+  
+  .right {
+    flex: 2;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,25 @@
+.about-container {
+  /* border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: 10px;
+  font-family: Arial, sans-serif; */
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
