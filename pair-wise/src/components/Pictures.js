@@ -7,15 +7,15 @@ import AO from './../Pics/AO_pic.png';
 const profiles = [
   {
     name: "Austin Espinosa",
-    imgSrc: AE, // Replace with the actual image URL
+    imgSrc: AE,
   },
   {
     name: "Hannah Li",
-    imgSrc: HL, // Replace with the actual image URL
+    imgSrc: HL,
   },
   {
     name: "Alec Overman",
-    imgSrc: AO, // Replace with the actual image URL
+    imgSrc: AO,
   },
 ];
 
