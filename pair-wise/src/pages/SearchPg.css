@@ -1,11 +1,11 @@
-
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: 100%;
   background-color: white;
+  padding: 20px;
 }
 
 .title {
@@ -15,18 +15,11 @@
   margin-bottom: 1rem;
 }
 
-.search-container {
-  text-align: center;
-}
-
-.search-label {
-  margin-bottom: 8px;
-  color: #333;
-}
-
 .search-bar {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  order: 1;
 }
 
 .search-input {
@@ -34,7 +27,8 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-right: 10px;
-  width: 250px;
+  width: 400px;
+  font-size: 16px;
 }
 
 .search-button {
@@ -44,8 +38,71 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .search-button:hover {
   background-color: #444;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.search-results-bubble {
+  width: 100%;
+}
+
+.bubble-pair {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.search-term-bubble {
+  background-color: #ffd6ad;
+  padding: 10px 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 16px;
+  width: fit-content;
+  min-width: 120px;
+  height: fit-content;
+  margin-left: auto;
+}
+
+.result-bubble {
+  background-color: #ffd6ad;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.result-item h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.result-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+.result-item a {
+  color: blue;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.result-item a:hover {
+  text-decoration: underline;
 }

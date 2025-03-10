@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import AboutPg from './pages/AboutPg';
 import HomePg from './pages/HomePg';
 import SearchPg from './pages/SearchPg';
-import ResultsPg from './pages/ResultsPg';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Route path="/home" element={<HomePg />} />
           <Route path="/search" element={<SearchPg />} />
           <Route path="/about" element={<AboutPg />} />
-          <Route path="/result" element={<ResultsPg />} />
         </Routes>
       </div>
     </Router>
