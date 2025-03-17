@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import './SearchPg.css';
 import { Link } from 'react-router-dom';
+import { fetchPapers } from "../utils/api"; // Import API function
 
-const mockData = [
-  {
-    title: "Innovations in Blackhole Research",
-    summary: "This article explores the latest technological innovations in the study of blackholes and how they are shaping the future of astrophysics.",
-    url: "https://example.com/blackholes-tech-innovations"
-  },
-  {
-    title: "Harnessing Blackhole Energy for the Future",
-    summary: "This article highlights the emerging solutions in harnessing the energy from blackholes and the global shift toward advanced space technologies.",
-    url: "https://example.com/blackholes-energy-solutions"
-  },
-  {
-    title: "Exploring the Final Frontier: Blackholes",
-    summary: "This article examines the latest advancements in space exploration focused on blackholes and the potential for human missions to study them.",
-    url: "https://example.com/blackholes-space-exploration"
-  },
-  {
-    title: "Blackholes: The Future of Space Science Careers",
-    summary: "This article delves into how blackhole research is influencing the future of work, particularly in the fields of astrophysics and quantum computing.",
-    url: "https://example.com/blackholes-future-of-work"
-  }
-];
+// const mockData = [
+//   {
+//     title: "Innovations in Blackhole Research",
+//     summary: "This article explores the latest technological innovations in the study of blackholes and how they are shaping the future of astrophysics.",
+//     url: "https://example.com/blackholes-tech-innovations"
+//   },
+//   {
+//     title: "Harnessing Blackhole Energy for the Future",
+//     summary: "This article highlights the emerging solutions in harnessing the energy from blackholes and the global shift toward advanced space technologies.",
+//     url: "https://example.com/blackholes-energy-solutions"
+//   },
+//   {
+//     title: "Exploring the Final Frontier: Blackholes",
+//     summary: "This article examines the latest advancements in space exploration focused on blackholes and the potential for human missions to study them.",
+//     url: "https://example.com/blackholes-space-exploration"
+//   },
+//   {
+//     title: "Blackholes: The Future of Space Science Careers",
+//     summary: "This article delves into how blackhole research is influencing the future of work, particularly in the fields of astrophysics and quantum computing.",
+//     url: "https://example.com/blackholes-future-of-work"
+//   }
+// ];
 
 function BubblePair({ term, results }) {
   return (
@@ -48,20 +49,26 @@ function SearchPg() {
   const [text, setText] = useState("");
   const [output, setOutput] = useState([]);
   const [isVisible, setIsVisible] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSearch = () => {
-    if (text) {
-      const filteredResults = mockData.filter(article =>
-        article.title.toLowerCase() ||
-        article.summary.toLowerCase()
-      );
-      
-      setOutput((prevOutput) => [...prevOutput, { term: text, results: filteredResults }]);
+  const handleSearch = async () => {
+    if (!text.trim()) return; // Prevent empty searches
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const data = await fetchPapers(text); // Call API
+      console.log(data);
+      setOutput((prevOutput) => [...prevOutput, { term: text, results: data }]);
       setText("");
       setIsVisible(false);
+    } catch (err) {
+      setError("Failed to fetch search results.");
+    } finally {
+      setLoading(false);
     }
-
-    console.log(output);
   };
 
   return (
