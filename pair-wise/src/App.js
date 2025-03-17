@@ -12,9 +12,11 @@ function App() {
       <Navbar />
       <div>
         <Routes>
+          <Route path="/" element={<HomePg />} />
           <Route path="/home" element={<HomePg />} />
           <Route path="/search" element={<SearchPg />} />
           <Route path="/about" element={<AboutPg />} />
+          <Route path="*" element={<HomePg />} />
         </Routes>
       </div>
     </Router>

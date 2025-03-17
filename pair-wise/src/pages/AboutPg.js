@@ -7,7 +7,7 @@ import Pictures from './../components/Pictures';
 function AboutPg() {
   return (
     <div>
-      <div className='app'>
+      <div className='about'>
         <div className='left'>
           <AboutTxt />
           <ContactForm />
