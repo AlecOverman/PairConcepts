@@ -1,3 +1,22 @@
+/* Ensure the Navbar stays fixed at the top */
+#root{
+  height: 100vh;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 98%;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #ffffff; /* Add a background color if needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+/* Add padding to the content to prevent it from being hidden behind the Navbar */
+.content {
+  padding-top: 70px; /* Adjust this value based on the height of your Navbar */
+  height: 100%;
+}
+
 .app {
   display: flex;
   flex-direction: row;

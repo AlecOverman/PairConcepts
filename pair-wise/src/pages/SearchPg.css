@@ -1,9 +1,9 @@
 .app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Center horizontally */
   width: 100%;
+  height: 80vh; /* Ensure the container takes at least the full viewport height */
   background-color: white;
   padding: 20px;
 }
@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin-top: 20px;
+  margin-top: 20px; /* Add some space between the search bar and results */
 }
 
 .search-results-bubble {
@@ -105,4 +105,19 @@
 
 .result-item a:hover {
   text-decoration: underline;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #9c9595; /* Customize the color and thickness */
+  margin: 20px 0; /* Adds space around the line */
+}
+
+.sentences {
+  margin-left: 20px;  /* Indents the sentences 20px from the left */
+  font-style: italic; /* Optional: You can make it italic for differentiation */
+}
+
+.search-bar.move-down {
+  margin-top: auto; /* Push the search bar to the bottom of the flex container */
 }

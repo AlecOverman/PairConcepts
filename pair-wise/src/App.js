@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div>
+      <div className='content'>
         <Routes>
-          <Route path="/home" element={<HomePg />} />
+          <Route path="/" element={<HomePg />} />
           <Route path="/search" element={<SearchPg />} />
           <Route path="/about" element={<AboutPg />} />
         </Routes>

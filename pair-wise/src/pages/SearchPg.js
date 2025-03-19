@@ -3,41 +3,48 @@ import './SearchPg.css';
 import { Link } from 'react-router-dom';
 import { fetchPapers } from "../utils/api"; // Import API function
 
-// const mockData = [
-//   {
-//     title: "Innovations in Blackhole Research",
-//     summary: "This article explores the latest technological innovations in the study of blackholes and how they are shaping the future of astrophysics.",
-//     url: "https://example.com/blackholes-tech-innovations"
-//   },
-//   {
-//     title: "Harnessing Blackhole Energy for the Future",
-//     summary: "This article highlights the emerging solutions in harnessing the energy from blackholes and the global shift toward advanced space technologies.",
-//     url: "https://example.com/blackholes-energy-solutions"
-//   },
-//   {
-//     title: "Exploring the Final Frontier: Blackholes",
-//     summary: "This article examines the latest advancements in space exploration focused on blackholes and the potential for human missions to study them.",
-//     url: "https://example.com/blackholes-space-exploration"
-//   },
-//   {
-//     title: "Blackholes: The Future of Space Science Careers",
-//     summary: "This article delves into how blackhole research is influencing the future of work, particularly in the fields of astrophysics and quantum computing.",
-//     url: "https://example.com/blackholes-future-of-work"
-//   }
-// ];
-
 function BubblePair({ term, results }) {
+  if (!Array.isArray(results)) {
+    return <div>No valid results to display</div>;  // Fallback UI if results is not an array
+  }
+  // Check if there's an error in the results
+  // Check if there's an error in the results
+  if (results.length > 0 && results[0].ERROR) {
+    console.log(results);  // Log the error for debugging
+    return (
+        <div className="bubble-pair">
+            <div className="result-bubble">
+                <h3>Error</h3>
+                <p>{results[0].ERROR}</p>  {/* Display the error message */}
+            </div>
+            <div className="search-term-bubble">
+              <p><strong>{term}</strong></p>
+            </div>
+        </div>
+    );
+  }
+  console.log(results)
   return (
     <div className="bubble-pair">
       <div className="result-bubble">
+        {/* Display the keyword once at the top */}
+        <h1>{results[0]?.keyword}</h1> {/* This assumes all results have the same keyword */}
+  
+        {/* Map over the results and display each result */}
         {results.map((result, i) => (
           <div key={i} className="result-item">
             <h3>{result.title}</h3>
-            <p>{result.summary}</p>
-            <a href={result.url} target="_blank" rel="noopener noreferrer">Read more</a>
+            <p> Published: {result.published}</p>
+            <p>Authors: {result.authors}</p>
+            <p className="sentences">{result.sentences}</p> {/* Added class 'sentences' */}
+            <a href={result.source_url} target="_blank" rel="noopener noreferrer">Read more</a>
+  
+            {/* Add a line separator */}
+            <hr className="separator" /> {/* You can style it with CSS */}
           </div>
         ))}
       </div>
+      
       <div className="search-term-bubble">
         <p><strong>{term}</strong></p>
       </div>
@@ -84,7 +91,7 @@ function SearchPg() {
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
         <button className="search-button" onClick={handleSearch}>Search</button>
-        <button className="filter">Filter</button>
+        <button className="search-button">Filter</button>
       </div>
 
       {/* Results should be outside search-bar */}

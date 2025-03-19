@@ -12,6 +12,7 @@ export const fetchPapers = async (input = "Blackholes") => {
     const response = await axios.get(`${API_URL}gemini`, {
       params: { input }  // Send the input as a query parameter
     });
+    console.log("this is the response: " + response.data)
     return response.data;  // Return the response data from the API
   } catch (error) {
     console.error("Error fetching papers:", error);
